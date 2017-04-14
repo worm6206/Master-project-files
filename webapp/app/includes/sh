@@ -1,0 +1,267 @@
+./musicxmltomidi ~/git/python/gttm/01/01_Waltz\ in\ E\ flat\ Grande\ Valse\ Brillante\ Op.18.xml > 1.midi
+./musicxmltomidi ~/git/python/gttm/02/02_Moments\ Musicaux.xml > 2.midi
+./musicxmltomidi ~/git/python/gttm/03/03_Bagatelle\ \'Fur\ Elise\'\ WoO.59.xml > 3.midi
+./musicxmltomidi ~/git/python/gttm/04/04_The\ Preludes\ Op.28\ No.15.xml > 4.midi
+./musicxmltomidi ~/git/python/gttm/05/05_Turkish\ March.xml > 5.midi
+./musicxmltomidi ~/git/python/gttm/06/06_Blumenlied\ Op.39.xml > 6.midi
+./musicxmltomidi ~/git/python/gttm/07/07_Nocturne.xml > 7.midi
+./musicxmltomidi ~/git/python/gttm/08/08_Spinnerlied\ Op.14\ No.4.xml > 8.midi
+./musicxmltomidi ~/git/python/gttm/09/09_String\ Quartet\ in\ F\ major\ Op.3\ No.5\ Serenade.xml > 9.midi
+./musicxmltomidi ~/git/python/gttm/10/10_Wiegenlied.xml > 10.midi
+./musicxmltomidi ~/git/python/gttm/11/11_Solvejgs\ Lied.xml > 11.midi
+./musicxmltomidi ~/git/python/gttm/12/12_Anitras\ Dans.xml > 12.midi
+./musicxmltomidi ~/git/python/gttm/13/13_Traumerei.xml > 13.midi
+./musicxmltomidi ~/git/python/gttm/14/14_Menuett\ No.2\ in\ G\ maj.xml > 14.midi
+./musicxmltomidi ~/git/python/gttm/15/15_Aida\ Fernando\ Corena.xml > 15.midi
+./musicxmltomidi ~/git/python/gttm/16/16_William\ Tell\ Overture.xml > 16.midi
+./musicxmltomidi ~/git/python/gttm/17/17_Carmen.xml > 17.midi
+./musicxmltomidi ~/git/python/gttm/18/18_Thais\ Meditation.xml > 18.midi
+./musicxmltomidi ~/git/python/gttm/19/19_Tannhauser\ Overture.xml > 19.midi
+./musicxmltomidi ~/git/python/gttm/20/20_La\ Traviata\ Brindisi.xml > 20.midi
+./musicxmltomidi ~/git/python/gttm/21/21_Plaisir\ d\'Amour.xml > 21.midi
+./musicxmltomidi ~/git/python/gttm/22/22_Ellens\ Gesang\ III\ Op.52-6\ D.839.xml > 22.midi
+./musicxmltomidi ~/git/python/gttm/23/23_Die\ Meistersinger\ von\ Nurnberg\ Prelude.xml > 23.midi
+./musicxmltomidi ~/git/python/gttm/24/24_Orphee\ aux\ Enfers\ Overture.xml > 24.midi
+./musicxmltomidi ~/git/python/gttm/25/25_L\'arlesienne\ Suite\ No.2\ Farandole.xml > 25.midi
+./musicxmltomidi ~/git/python/gttm/26/26_Overture\ No.3\ BWV.1068\ Air\ on\ a\ G\ string.xml > 26.midi
+./musicxmltomidi ~/git/python/gttm/27/27_Peer\ Gynt\ Suite\ No.1\ Op.46\ Morgenstemning.xml > 27.midi
+./musicxmltomidi ~/git/python/gttm/28/28_Le\ carnaval\ des\ animaux\ Le\ Cygne.xml > 28.midi
+./musicxmltomidi ~/git/python/gttm/29/29_Greensleeves.xml > 29.midi
+./musicxmltomidi ~/git/python/gttm/30/30_3\ Gymnopedies\ No.1.xml > 30.midi
+./musicxmltomidi ~/git/python/gttm/31/31_Sinfonie\ Nr.9\ d\ moll\ Op.125\ 4.Satz\ An\ die\ Freude.xml > 31.midi
+./musicxmltomidi ~/git/python/gttm/32/32_The\ Nutcracker\ Suite\ Op.71a\ No.8\ Waltz\ of\ the\ Flowers.xml > 32.midi
+./musicxmltomidi ~/git/python/gttm/33/33_Swan\ Lake\ Op.20\ No.9\ Finale.xml > 33.midi
+./musicxmltomidi ~/git/python/gttm/34/34_Water\ Music\ in\ D\ major\ HWV\ 349\ No.11\ Alla\ Hornpipe.xml > 34.midi
+./musicxmltomidi ~/git/python/gttm/35/35_Ombra\ mai\ fu\ HWV\ 40.xml > 35.midi
+./musicxmltomidi ~/git/python/gttm/36/36_Estudiantina\ Op.191.xml > 36.midi
+./musicxmltomidi ~/git/python/gttm/37/37_Sonate\ fur\ Klavier\ Nr.48\ C\ dur\ Op.30-1\ Mov.1.xml > 37.midi
+./musicxmltomidi ~/git/python/gttm/38/38_Sonate\ fur\ Klavier\ Nr.15\ C\ dur\ K.545\ Mov.1.xml > 38.midi
+./musicxmltomidi ~/git/python/gttm/39/39_Andante\ C\ dur.xml > 39.midi
+./musicxmltomidi ~/git/python/gttm/40/40_Alpengluhen\ Op.193.xml > 40.midi
+./musicxmltomidi ~/git/python/gttm/41/41_Children\'s\ Album\ Op.39-18\ Air\ de\ Danse\ napolitaine.xml > 41.midi
+./musicxmltomidi ~/git/python/gttm/42/42_Children\'s\ Album\ Op.39-9\ Valse.xml > 42.midi
+./musicxmltomidi ~/git/python/gttm/43/43_Les\ Contes\ d\'Hoffmann\ Barcarolle.xml > 43.midi
+./musicxmltomidi ~/git/python/gttm/44/44_Rosamunde\ Prinzessin\ von\ Zypern\ Op.26\ D797\ Intermezzo\ No.3.xml > 44.midi
+./musicxmltomidi ~/git/python/gttm/45/45_Gianni\ Schicchi\ O\ mio\ babbino\ caro.xml > 45.midi
+./musicxmltomidi ~/git/python/gttm/46/46_Dichterliebe\ Op.48-1\ Im\ wunderschonen\ Monat.xml > 46.midi
+./musicxmltomidi ~/git/python/gttm/47/47_Le\ Nozze\ di\ Figaro\ %82j%82u492\ Voi\ che\ sapete.xml > 47.midi
+./musicxmltomidi ~/git/python/gttm/48/48_Rigoletto\ La\ donna\ e\ mobile.xml > 48.midi
+./musicxmltomidi ~/git/python/gttm/49/49_The\ Planets\ Op.32\ Jupiter,\ the\ Bringer\ of\ Jollity.xml > 49.midi
+./musicxmltomidi ~/git/python/gttm/50/50_Amazing\ Grace.xml > 50.midi
+./musicxmltomidi ~/git/python/gttm/51/51_Fantasiestucke\ Op.12-2\ Aufschwung.xml > 51.midi
+./musicxmltomidi ~/git/python/gttm/52/52_Fantasiestucke\ Op.12-7\ Traumes\ Wirren.xml > 52.midi
+./musicxmltomidi ~/git/python/gttm/53/53_Lieder\ ohne\ Worte\ Op.19-3\ Jagerlied.xml > 53.midi
+./musicxmltomidi ~/git/python/gttm/54/54_Suite\ HWV\ 430\ Air\ mit\ Variationen\ Harmonious\ Blacksmith.xml > 54.midi
+./musicxmltomidi ~/git/python/gttm/55/55_Farewell\ To\ The\ Piano\ WoO.62.xml > 55.midi
+./musicxmltomidi ~/git/python/gttm/56/56_Le\ Coucou.xml > 56.midi
+./musicxmltomidi ~/git/python/gttm/57/57_Waves\ of\ the\ Danube.xml > 57.midi
+./musicxmltomidi ~/git/python/gttm/58/58_Waltzes\ No.6\ Op.64-1\ Des\ dur\ Valse\ du\ Petit\ Chien.xml > 58.midi
+./musicxmltomidi ~/git/python/gttm/59/59_Schwanengesang\ No.1\ Op.72-4\ D.957-4\ Standchen.xml > 59.midi
+./musicxmltomidi ~/git/python/gttm/60/60_Ma\ Vlast\ Moldau.xml > 60.midi
+./musicxmltomidi ~/git/python/gttm/61/61_Album\ fur\ die\ Jugend\ Op.68-10\ Frohlicher\ Landmann.xml > 61.midi
+./musicxmltomidi ~/git/python/gttm/62/62_Doll\'s\ Dreaming\ and\ Awakening\ Op.202.xml > 62.midi
+./musicxmltomidi ~/git/python/gttm/63/63_25\ Etudes\ faciles\ et\ progressives,\ conposees\ et\ doigtees\ expressement\ pour\ l\'etendue\ des\ petites\ mains\ Op.100-2\ Arabesque.xml > 63.midi
+./musicxmltomidi ~/git/python/gttm/64/64_Stimmen\ aus\ der\ Kinderwelt,\ 12\ leichte\ Vortragsstuck\ Op.78-3\ Heideroslein.xml > 64.midi
+./musicxmltomidi ~/git/python/gttm/65/65_25\ Etudes\ faciles\ et\ progressives,\ conposees\ et\ doigtees\ expressement\ pour\ l\'etendue\ des\ petites\ mains\ Op.100-20\ Tarentelle.xml > 65.midi
+./musicxmltomidi ~/git/python/gttm/66/66_The\ Nutcracker\ Suite\ Op.71a\ No.2\ March.xml > 66.midi
+./musicxmltomidi ~/git/python/gttm/67/67_Ballade\ g\ moll\ Op.23.xml > 67.midi
+./musicxmltomidi ~/git/python/gttm/68/68_12\ Etudes\ E\ dur\ Op.10-3.xml > 68.midi
+./musicxmltomidi ~/git/python/gttm/69/69_Kanon\ und\ Gigue\ D\ dur\ for\ drei\ Violinen\ und\ Basso\ Continuo\ Kanon.xml > 69.midi
+./musicxmltomidi ~/git/python/gttm/70/70_Herz\ und\ Mund\ und\ Tat\ und\ Leben\ BWV147-6\ Wohl\ mir,\ das\ ich\ Jesum\ habe.xml > 70.midi
+./musicxmltomidi ~/git/python/gttm/71/71_Messiah\ HWV.56\ 23.Hallelujah.xml > 71.midi
+./musicxmltomidi ~/git/python/gttm/72/72_Preludes\ 1\ La\ fille\ aux\ cheveux\ de\ lin.xml > 72.midi
+./musicxmltomidi ~/git/python/gttm/73/73_Pavane\ pour\ une\ infante\ defunte.xml > 73.midi
+./musicxmltomidi ~/git/python/gttm/74/74_8\ Humoresky\ Op.101-7\ B.187\ Ges\ dur.xml > 74.midi
+./musicxmltomidi ~/git/python/gttm/75/75_Sicilienne\ Op.78.xml > 75.midi
+./musicxmltomidi ~/git/python/gttm/76/76_Salut\ d\'amour\ Op.12.xml > 76.midi
+./musicxmltomidi ~/git/python/gttm/77/77_Violinkonzert\ e\ moll\ Op.64\ 1.Satz.xml > 77.midi
+./musicxmltomidi ~/git/python/gttm/78/78_Concerti\ a\ 4\ e\ 5\ Il\ cimento\ dell\'armonia\ e\ dell\'inventione\ Op.8\ Le\ quattro\ stagioni\ Concerti\ Nr.1E\ dur\ RV.269\ La\ Primavera.xml > 78.midi
+./musicxmltomidi ~/git/python/gttm/79/79_Eine\ kleine\ Nachtmusik\ G\ dur\ K.525\ 1.Satz.xml > 79.midi
+./musicxmltomidi ~/git/python/gttm/80/80_Symphonie\ Nr.40\ g\ moll\ KV.550\ 1.Satz.xml > 80.midi
+./musicxmltomidi ~/git/python/gttm/81/81_Symphony\ No.9\ in\ E\ minor\ Op.95\ B.178\ From\ the\ New\ World\ Mov.2\ Goin\'\ Home.xml > 81.midi
+./musicxmltomidi ~/git/python/gttm/82/82_An\ der\ schonen\ blauen\ Donau\ Op.314.xml > 82.midi
+./musicxmltomidi ~/git/python/gttm/83/83_Radetzky-Marsch\ Op.228.xml > 83.midi
+./musicxmltomidi ~/git/python/gttm/84/84_Toccata\ und\ Fuge\ d\ moll\ BWV565.xml > 84.midi
+./musicxmltomidi ~/git/python/gttm/85/85_Tableaux\ d\'une\ exposition\ Promenade.xml > 85.midi
+./musicxmltomidi ~/git/python/gttm/86/86_Pomp\ and\ Circumstance\ Op.39\ No.1.xml > 86.midi
+./musicxmltomidi ~/git/python/gttm/87/87_Impromptu\ cis\ moll\ Op.66.xml > 87.midi
+./musicxmltomidi ~/git/python/gttm/88/88_Scherzo\ b\ moll\ Op.31.xml > 88.midi
+./musicxmltomidi ~/git/python/gttm/89/89_12\ Etudes\ c\ moll\ Op.10-12.xml > 89.midi
+./musicxmltomidi ~/git/python/gttm/90/90_Impromptus\ D\ 935\ Op.142-3\ B\ dur.xml > 90.midi
+./musicxmltomidi ~/git/python/gttm/91/91_Rondo\ D\ dur\ K.485.xml > 91.midi
+./musicxmltomidi ~/git/python/gttm/92/92_Franzosische\ Suiten\ Nr.5\ G\ dur\ BWV\ 816\ Gavotte.xml > 92.midi
+./musicxmltomidi ~/git/python/gttm/93/93_Sechs\ Gesange\ Op.34-2\ Auf\ Flugeln\ des\ Gesanges.xml > 93.midi
+./musicxmltomidi ~/git/python/gttm/94/94_Csikos\ Post.xml > 94.midi
+./musicxmltomidi ~/git/python/gttm/95/95_12\ Variationen\ uber\ ein\ franzosisches\ Lied\ \'Ah,vous\ dirai-je,\ maman\'\ C\ dur\ K.265\ K6.300e.xml > 95.midi
+./musicxmltomidi ~/git/python/gttm/96/96_Lieder\ ohne\ Worte\ Heft\ 5\ Op.62-6\ Fruhlingslied.xml > 96.midi
+./musicxmltomidi ~/git/python/gttm/97/97_Les\ Patineurs\ Op.183.xml > 97.midi
+./musicxmltomidi ~/git/python/gttm/98/98_Sonate\ fur\ Klavier\ Nr.8\ c\ moll\ Pathetique\ Op.13\ 2.Satz.xml > 98.midi
+./musicxmltomidi ~/git/python/gttm/99/99_3\ Valses\ No.7\ Op.64-2\ cis\ moll.xml > 99.midi
+./musicxmltomidi ~/git/python/gttm/100/100_Sonate\ fur\ Klavier\ Nr.11\ A\ dur\ K.331\ K6.300i\ Mov.1.xml > 100.midi
+./musicxmltomidi ~/git/python/gttm/101/MSC-101.xml > 101.midi
+./musicxmltomidi ~/git/python/gttm/102/MSC-102.xml > 102.midi
+./musicxmltomidi ~/git/python/gttm/103/MSC-103.xml > 103.midi
+./musicxmltomidi ~/git/python/gttm/104/MSC-104.xml > 104.midi
+./musicxmltomidi ~/git/python/gttm/105/MSC-105.xml > 105.midi
+./musicxmltomidi ~/git/python/gttm/106/MSC-106.xml > 106.midi
+./musicxmltomidi ~/git/python/gttm/107/MSC-107.xml > 107.midi
+./musicxmltomidi ~/git/python/gttm/108/MSC-108.xml > 108.midi
+./musicxmltomidi ~/git/python/gttm/109/MSC-109.xml > 109.midi
+./musicxmltomidi ~/git/python/gttm/110/MSC-110.xml > 110.midi
+./musicxmltomidi ~/git/python/gttm/111/MSC-111.xml > 111.midi
+./musicxmltomidi ~/git/python/gttm/112/MSC-112.xml > 112.midi
+./musicxmltomidi ~/git/python/gttm/113/MSC-113.xml > 113.midi
+./musicxmltomidi ~/git/python/gttm/114/MSC-114.xml > 114.midi
+./musicxmltomidi ~/git/python/gttm/115/MSC-115.xml > 115.midi
+./musicxmltomidi ~/git/python/gttm/116/MSC-116.xml > 116.midi
+./musicxmltomidi ~/git/python/gttm/117/MSC-117.xml > 117.midi
+./musicxmltomidi ~/git/python/gttm/118/MSC-118.xml > 118.midi
+./musicxmltomidi ~/git/python/gttm/119/MSC-119.xml > 119.midi
+./musicxmltomidi ~/git/python/gttm/120/MSC-120.xml > 120.midi
+./musicxmltomidi ~/git/python/gttm/121/MSC-121.xml > 121.midi
+./musicxmltomidi ~/git/python/gttm/122/MSC-122.xml > 122.midi
+./musicxmltomidi ~/git/python/gttm/123/MSC-123.xml > 123.midi
+./musicxmltomidi ~/git/python/gttm/124/MSC-124.xml > 124.midi
+./musicxmltomidi ~/git/python/gttm/125/MSC-125.xml > 125.midi
+./musicxmltomidi ~/git/python/gttm/126/MSC-126.xml > 126.midi
+./musicxmltomidi ~/git/python/gttm/127/MSC-127.xml > 127.midi
+./musicxmltomidi ~/git/python/gttm/128/MSC-128.xml > 128.midi
+./musicxmltomidi ~/git/python/gttm/129/MSC-129.xml > 129.midi
+./musicxmltomidi ~/git/python/gttm/130/MSC-130.xml > 130.midi
+./musicxmltomidi ~/git/python/gttm/131/MSC-131.xml > 131.midi
+./musicxmltomidi ~/git/python/gttm/132/MSC-132.xml > 132.midi
+./musicxmltomidi ~/git/python/gttm/133/MSC-133.xml > 133.midi
+./musicxmltomidi ~/git/python/gttm/134/MSC-134.xml > 134.midi
+./musicxmltomidi ~/git/python/gttm/135/MSC-135.xml > 135.midi
+./musicxmltomidi ~/git/python/gttm/136/MSC-136.xml > 136.midi
+./musicxmltomidi ~/git/python/gttm/137/MSC-137.xml > 137.midi
+./musicxmltomidi ~/git/python/gttm/138/MSC-138.xml > 138.midi
+./musicxmltomidi ~/git/python/gttm/139/MSC-139.xml > 139.midi
+./musicxmltomidi ~/git/python/gttm/140/MSC-140.xml > 140.midi
+./musicxmltomidi ~/git/python/gttm/141/MSC-141.xml > 141.midi
+./musicxmltomidi ~/git/python/gttm/142/MSC-142.xml > 142.midi
+./musicxmltomidi ~/git/python/gttm/143/MSC-143.xml > 143.midi
+./musicxmltomidi ~/git/python/gttm/144/MSC-144.xml > 144.midi
+./musicxmltomidi ~/git/python/gttm/145/MSC-145.xml > 145.midi
+./musicxmltomidi ~/git/python/gttm/146/MSC-146.xml > 146.midi
+./musicxmltomidi ~/git/python/gttm/147/MSC-147.xml > 147.midi
+./musicxmltomidi ~/git/python/gttm/148/MSC-148.xml > 148.midi
+./musicxmltomidi ~/git/python/gttm/149/MSC-149.xml > 149.midi
+./musicxmltomidi ~/git/python/gttm/150/MSC-150.xml > 150.midi
+./musicxmltomidi ~/git/python/gttm/151/MSC-151.xml > 151.midi
+./musicxmltomidi ~/git/python/gttm/152/MSC-152.xml > 152.midi
+./musicxmltomidi ~/git/python/gttm/153/MSC-153.xml > 153.midi
+./musicxmltomidi ~/git/python/gttm/154/MSC-154.xml > 154.midi
+./musicxmltomidi ~/git/python/gttm/155/MSC-155.xml > 155.midi
+./musicxmltomidi ~/git/python/gttm/156/MSC-156.xml > 156.midi
+./musicxmltomidi ~/git/python/gttm/157/MSC-157.xml > 157.midi
+./musicxmltomidi ~/git/python/gttm/158/MSC-158.xml > 158.midi
+./musicxmltomidi ~/git/python/gttm/159/MSC-159.xml > 159.midi
+./musicxmltomidi ~/git/python/gttm/160/MSC-160.xml > 160.midi
+./musicxmltomidi ~/git/python/gttm/161/MSC-161.xml > 161.midi
+./musicxmltomidi ~/git/python/gttm/162/MSC-162.xml > 162.midi
+./musicxmltomidi ~/git/python/gttm/163/MSC-163.xml > 163.midi
+./musicxmltomidi ~/git/python/gttm/164/MSC-164.xml > 164.midi
+./musicxmltomidi ~/git/python/gttm/165/MSC-165.xml > 165.midi
+./musicxmltomidi ~/git/python/gttm/166/MSC-166.xml > 166.midi
+./musicxmltomidi ~/git/python/gttm/167/MSC-167.xml > 167.midi
+./musicxmltomidi ~/git/python/gttm/168/MSC-168.xml > 168.midi
+./musicxmltomidi ~/git/python/gttm/169/MSC-169.xml > 169.midi
+./musicxmltomidi ~/git/python/gttm/170/MSC-170.xml > 170.midi
+./musicxmltomidi ~/git/python/gttm/171/MSC-171.xml > 171.midi
+./musicxmltomidi ~/git/python/gttm/172/MSC-172.xml > 172.midi
+./musicxmltomidi ~/git/python/gttm/173/MSC-173.xml > 173.midi
+./musicxmltomidi ~/git/python/gttm/174/MSC-174.xml > 174.midi
+./musicxmltomidi ~/git/python/gttm/175/MSC-175.xml > 175.midi
+./musicxmltomidi ~/git/python/gttm/176/MSC-176.xml > 176.midi
+./musicxmltomidi ~/git/python/gttm/177/MSC-177.xml > 177.midi
+./musicxmltomidi ~/git/python/gttm/178/MSC-178.xml > 178.midi
+./musicxmltomidi ~/git/python/gttm/179/MSC-179.xml > 179.midi
+./musicxmltomidi ~/git/python/gttm/180/MSC-180.xml > 180.midi
+./musicxmltomidi ~/git/python/gttm/181/MSC-181.xml > 181.midi
+./musicxmltomidi ~/git/python/gttm/182/MSC-182.xml > 182.midi
+./musicxmltomidi ~/git/python/gttm/183/MSC-183.xml > 183.midi
+./musicxmltomidi ~/git/python/gttm/184/MSC-184.xml > 184.midi
+./musicxmltomidi ~/git/python/gttm/185/MSC-185.xml > 185.midi
+./musicxmltomidi ~/git/python/gttm/186/MSC-186.xml > 186.midi
+./musicxmltomidi ~/git/python/gttm/187/MSC-187.xml > 187.midi
+./musicxmltomidi ~/git/python/gttm/188/MSC-188.xml > 188.midi
+./musicxmltomidi ~/git/python/gttm/189/MSC-189.xml > 189.midi
+./musicxmltomidi ~/git/python/gttm/190/MSC-190.xml > 190.midi
+./musicxmltomidi ~/git/python/gttm/191/MSC-191.xml > 191.midi
+./musicxmltomidi ~/git/python/gttm/192/MSC-192.xml > 192.midi
+./musicxmltomidi ~/git/python/gttm/193/MSC-193.xml > 193.midi
+./musicxmltomidi ~/git/python/gttm/194/MSC-194.xml > 194.midi
+./musicxmltomidi ~/git/python/gttm/195/MSC-195.xml > 195.midi
+./musicxmltomidi ~/git/python/gttm/196/MSC-196.xml > 196.midi
+./musicxmltomidi ~/git/python/gttm/197/MSC-197.xml > 197.midi
+./musicxmltomidi ~/git/python/gttm/198/MSC-198.xml > 198.midi
+./musicxmltomidi ~/git/python/gttm/199/MSC-199.xml > 199.midi
+./musicxmltomidi ~/git/python/gttm/200/MSC-200.xml > 200.midi
+./musicxmltomidi ~/git/python/gttm/201/MSC-201.xml > 201.midi
+./musicxmltomidi ~/git/python/gttm/202/MSC-202.xml > 202.midi
+./musicxmltomidi ~/git/python/gttm/203/MSC-203.xml > 203.midi
+./musicxmltomidi ~/git/python/gttm/204/MSC-204.xml > 204.midi
+./musicxmltomidi ~/git/python/gttm/205/MSC-205.xml > 205.midi
+./musicxmltomidi ~/git/python/gttm/206/MSC-206.xml > 206.midi
+./musicxmltomidi ~/git/python/gttm/207/MSC-207.xml > 207.midi
+./musicxmltomidi ~/git/python/gttm/208/MSC-208.xml > 208.midi
+./musicxmltomidi ~/git/python/gttm/209/MSC-209.xml > 209.midi
+./musicxmltomidi ~/git/python/gttm/210/MSC-210.xml > 210.midi
+./musicxmltomidi ~/git/python/gttm/211/MSC-211.xml > 211.midi
+./musicxmltomidi ~/git/python/gttm/212/MSC-212.xml > 212.midi
+./musicxmltomidi ~/git/python/gttm/213/MSC-213.xml > 213.midi
+./musicxmltomidi ~/git/python/gttm/214/MSC-214.xml > 214.midi
+./musicxmltomidi ~/git/python/gttm/215/MSC-215.xml > 215.midi
+./musicxmltomidi ~/git/python/gttm/216/MSC-216.xml > 216.midi
+./musicxmltomidi ~/git/python/gttm/217/MSC-217.xml > 217.midi
+./musicxmltomidi ~/git/python/gttm/218/MSC-218.xml > 218.midi
+./musicxmltomidi ~/git/python/gttm/219/MSC-219.xml > 219.midi
+./musicxmltomidi ~/git/python/gttm/220/MSC-220.xml > 220.midi
+./musicxmltomidi ~/git/python/gttm/221/MSC-221.xml > 221.midi
+./musicxmltomidi ~/git/python/gttm/222/MSC-222.xml > 222.midi
+./musicxmltomidi ~/git/python/gttm/223/MSC-223.xml > 223.midi
+./musicxmltomidi ~/git/python/gttm/224/MSC-224.xml > 224.midi
+./musicxmltomidi ~/git/python/gttm/225/MSC-225.xml > 225.midi
+./musicxmltomidi ~/git/python/gttm/226/MSC-226.xml > 226.midi
+./musicxmltomidi ~/git/python/gttm/227/MSC-227.xml > 227.midi
+./musicxmltomidi ~/git/python/gttm/228/MSC-228.xml > 228.midi
+./musicxmltomidi ~/git/python/gttm/229/MSC-229.xml > 229.midi
+./musicxmltomidi ~/git/python/gttm/230/MSC-230.xml > 230.midi
+./musicxmltomidi ~/git/python/gttm/231/MSC-231.xml > 231.midi
+./musicxmltomidi ~/git/python/gttm/232/MSC-232.xml > 232.midi
+./musicxmltomidi ~/git/python/gttm/233/MSC-233.xml > 233.midi
+./musicxmltomidi ~/git/python/gttm/234/MSC-234.xml > 234.midi
+./musicxmltomidi ~/git/python/gttm/235/MSC-235.xml > 235.midi
+./musicxmltomidi ~/git/python/gttm/236/MSC-236.xml > 236.midi
+./musicxmltomidi ~/git/python/gttm/237/MSC-237.xml > 237.midi
+./musicxmltomidi ~/git/python/gttm/238/MSC-238.xml > 238.midi
+./musicxmltomidi ~/git/python/gttm/239/MSC-239.xml > 239.midi
+./musicxmltomidi ~/git/python/gttm/240/MSC-240.xml > 240.midi
+./musicxmltomidi ~/git/python/gttm/241/MSC-241.xml > 241.midi
+./musicxmltomidi ~/git/python/gttm/242/MSC-242.xml > 242.midi
+./musicxmltomidi ~/git/python/gttm/243/MSC-243.xml > 243.midi
+./musicxmltomidi ~/git/python/gttm/244/MSC-244.xml > 244.midi
+./musicxmltomidi ~/git/python/gttm/245/MSC-245.xml > 245.midi
+./musicxmltomidi ~/git/python/gttm/246/MSC-246.xml > 246.midi
+./musicxmltomidi ~/git/python/gttm/247/MSC-247.xml > 247.midi
+./musicxmltomidi ~/git/python/gttm/248/MSC-248.xml > 248.midi
+./musicxmltomidi ~/git/python/gttm/249/MSC-249.xml > 249.midi
+./musicxmltomidi ~/git/python/gttm/250/MSC-250.xml > 250.midi
+./musicxmltomidi ~/git/python/gttm/251/MSC-251.xml > 251.midi
+./musicxmltomidi ~/git/python/gttm/252/MSC-252.xml > 252.midi
+./musicxmltomidi ~/git/python/gttm/253/MSC-253.xml > 253.midi
+./musicxmltomidi ~/git/python/gttm/254/MSC-254.xml > 254.midi
+./musicxmltomidi ~/git/python/gttm/255/MSC-255.xml > 255.midi
+./musicxmltomidi ~/git/python/gttm/256/MSC-256.xml > 256.midi
+./musicxmltomidi ~/git/python/gttm/257/MSC-257.xml > 257.midi
+./musicxmltomidi ~/git/python/gttm/258/MSC-258.xml > 258.midi
+./musicxmltomidi ~/git/python/gttm/259/MSC-259.xml > 259.midi
+./musicxmltomidi ~/git/python/gttm/260/MSC-260.xml > 260.midi
+./musicxmltomidi ~/git/python/gttm/261/MSC-261.xml > 261.midi
+./musicxmltomidi ~/git/python/gttm/262/MSC-262.xml > 262.midi
+./musicxmltomidi ~/git/python/gttm/263/MSC-263.xml > 263.midi
+./musicxmltomidi ~/git/python/gttm/264/MSC-264.xml > 264.midi
+./musicxmltomidi ~/git/python/gttm/265/MSC-265.xml > 265.midi
+./musicxmltomidi ~/git/python/gttm/266/MSC-266.xml > 266.midi
+./musicxmltomidi ~/git/python/gttm/267/MSC-267.xml > 267.midi

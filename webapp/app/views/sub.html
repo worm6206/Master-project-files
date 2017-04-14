@@ -1,0 +1,57 @@
+<script type="text/javascript" src="includes/tree.json"></script>
+<p id="sp"></p>
+<script type="text/javascript">
+
+function subtree(t){
+	var out = "";
+	if(('children' in t)){
+		for(var x in t.children)
+			out +=subtree(t.children[x]);
+	}else{
+		out+=(t.id.slice(3,t.id.length));
+	}
+	return out;
+}
+
+function travel(t,l){
+	var out = [];
+	if(subtree(t).length > l){
+		for(var x in t.children)
+			out = out.concat(travel(t.children[x],l));
+	}else if(subtree(t).length <= l){
+		out.push(subtree(t));
+	}
+	return out;
+}
+
+function leng(t){
+	if(!('children' in t)) return 1;
+	else return 1+leng(t.children[0])+leng(t.children[1]);
+}
+
+// var all = {}
+// for(var i in tree){ 
+// 	var temp = travel(tree[i],4);
+// 	for(var x in temp){
+// 		if(!(temp[x].toString() in all))
+// 			all[temp[x].toString()] = 0;
+// 		all[temp[x].toString()]++;
+// 	}
+// 	// console.log(temp);
+// }
+// 
+// var i = 6, j=2,p = 5;
+// var sum = travel(tree[i],p).length+travel(tree[j],p).length;
+// var inter = _.intersection(travel(tree[i],p),travel(tree[j],p));
+// var diff = _.difference(travel(tree[i],p), inter).length+_.difference(travel(tree[j],p), inter).length
+// var d = diff/sum;
+
+
+
+// console.log(travel(tree[i],p),travel(tree[j],p))
+
+// console.log(_.intersection(travel(tree[i],p),travel(tree[j],p)));
+
+$('#sp').text(leng(tree[4]));
+
+</script>

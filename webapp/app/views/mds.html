@@ -1,0 +1,286 @@
+<div id="container2"></div>
+<div id="container"></div>
+
+<script type="text/javascript" src="includes/tree.json"></script>
+<script type="text/javascript">
+
+
+/*----------  list of composers  ----------*/
+
+var composers = {}; // objet of composers
+var d1 = []; // list of composers and music count, [0] being the max
+var musicsOfTop5,top5;
+var mdsResult;
+var color = d3.scaleOrdinal(d3.schemeCategory10);
+var plotSpace = {};
+var steps = [];
+var tree2;
+var space = [];
+d3.tsv("includes/list.tsv", function(data) {
+	data.forEach(function(d){
+		if(d.Author in composers)
+			composers[d.Author].push(d['No.']);
+		else{
+			composers[d.Author] = [];
+			// composers[d.Author].music = [];
+			composers[d.Author].push(d['No.']);
+		}
+	});
+
+	for(var x in composers){
+		var temp = [];
+		temp.push(x);
+		temp.push(composers[x].length);
+		d1.push(temp);
+	}
+	d1 = d1.sort(function(x,y){return y[1] - x[1]});
+	top5 = d1.map(function(x){return x[0]}).slice(0,5);
+	musicsOfTop5 = [];
+	sizeArr = [];
+	for(var i in top5){
+		sizeArr.push(composers[top5[i]].length);
+		musicsOfTop5 = musicsOfTop5.concat(composers[top5[i]]);
+	}
+
+	/*----------  calculating distance  ----------*/
+
+	// tree is array
+	function tra(t,d){
+		var o = {};
+		if(d==0)
+			return {id:t.id};
+		o.id = t.id;
+		if(('children' in t)){
+			o.children = [];
+			for(var x in t.children)
+				o.children.push(tra(t.children[x],d-1));
+		}
+		return o;
+	}
+
+	// Define cost functions. 
+	var insert, remove, update;
+	insert = remove = function(node) { return 1; };
+	update = function(nodeA, nodeB) { return nodeA.id !== nodeB.id ? 1 : 0; };
+	var children = function(node) { return node.children; };
+
+	tree2 = tree.filter(function(el,i){
+	  return (i in musicsOfTop5);
+	});
+
+	var max = -Infinity;
+
+	// fill with 0s
+	for(var i in musicsOfTop5){
+		var temp = [];
+		for(var j in musicsOfTop5){
+			temp.push(0);
+		}
+		steps.push(temp);
+	}
+
+	tree2.forEach(function(x,i){
+		tree2.forEach(function(y,j){
+			if(i<=j) return;
+			var d = ted(tra(tree2[i],5), tra(tree2[j],5), children, insert, remove, update).distance;
+			steps[i][j] = d;
+			steps[j][i] = d;
+			if(max < d) max = d;
+		});
+	});
+
+/*----------  MDS  ----------*/
+	mdsResult = mds(steps);
+	function mds(distances, dimensions) {
+        dimensions = dimensions || 2;
+
+        // square distances
+        var M = numeric.mul(-0.5, numeric.pow(distances, 2));
+
+        // double centre the rows/columns
+        function mean(A) { return numeric.div(numeric.add.apply(null, A), A.length); }
+        var rowMeans = mean(M),
+            colMeans = mean(numeric.transpose(M)),
+            totalMean = mean(rowMeans);
+
+        for (var i = 0; i < M.length; ++i) {
+            for (var j =0; j < M[0].length; ++j) {
+                M[i][j] += totalMean - rowMeans[i] - colMeans[j];
+            }
+        }
+
+        // take the SVD of the double centred matrix, and return the
+        // points from it
+        var ret = numeric.svd(M),
+            eigenValues = numeric.sqrt(ret.S);
+        return ret.U.map(function(row) {
+            return numeric.mul(row, eigenValues).splice(0, dimensions);
+        });
+    };
+
+
+	/*----------  Highcharts  ----------*/
+	var counter = 0;
+	for(var i in top5){
+		plotSpace[top5[i]] = mdsResult.slice(counter,counter+sizeArr[i]);
+		counter += sizeArr[i];
+	}
+	$('#container').height($('#container').width());
+	$(window).resize(function(){$('#container').height($('#container').width());});
+	draw();
+	for(var i in steps){
+		for(var j in steps[i]){
+			if(i<=j) continue;
+			var temp1 = [];
+			temp1.push(+i);
+			temp1.push(+j);
+			temp1.push(steps[+i][+j]);
+			var temp2 = [];
+			temp2.push(+j);
+			temp2.push(+i);
+			temp2.push(steps[+i][+j]);
+			space.push(temp1);
+			space.push(temp2);
+		}
+	}
+	$('#container2').height($('#container2').width());
+	$(window).resize(function(){$('#container2').height($('#container2').width());});
+	matrix();
+	function matrix(){
+		Highcharts.chart('container2', {
+
+		    chart: {
+		        type: 'heatmap',
+		        marginTop: 80,
+		        marginBottom: 80,
+		        plotBorderWidth: 1
+		    },
+
+
+		    title: {
+		        text: top5.join(', ')
+
+		    },
+
+		    subtitle: {
+		        text: 'tree edit distance'
+		    },
+
+		    xAxis: {
+		        categories: musicsOfTop5
+		    },
+
+		    yAxis: {
+		        categories: musicsOfTop5,
+		        title: null
+		    },
+
+		    colorAxis: {
+		        min: 0,
+		        minColor: '#FFFFFF',
+		        maxColor: Highcharts.getOptions().colors[0]
+		    },
+
+		    legend: {
+		        align: 'right',
+		        layout: 'vertical',
+		        margin: 0,
+		        verticalAlign: 'top',
+		        y: 65,
+		        symbolHeight: 280
+		    },
+
+		    tooltip: {
+		        formatter: function () {
+		            return this.series.xAxis.categories[this.point.x] + ' and ' + this.series.yAxis.categories[this.point.y] + '<br><b>' +
+		                this.point.value + '</b>';
+		        }
+		    },
+
+		    series: [{
+		        name: 'Sales per employee',
+		        borderWidth: 1,
+		        data: space,
+            	turboThreshold: 100000,
+		        // dataLabels: {
+		        //     enabled: true,
+		        //     color: '#000000'
+		        // }
+		    }]
+
+		});
+	}
+
+	function draw(){
+		Highcharts.chart('container', {
+		    chart: {
+		        type: 'scatter',
+		        zoomType: 'xy'
+		    },
+		    title: {
+		        text: 'MDS of tree edit distance matrix'
+		    },
+		    // subtitle: {
+		    //     text: 'Source: Heinz  2003'
+		    // },
+		    xAxis: {
+		        title: {
+		            enabled: true
+		        },
+		        startOnTick: true,
+		        endOnTick: true,
+		        showLastLabel: true
+		    },
+		    yAxis: {
+		    	gridLineWidth: 0,
+		        title: {
+		        }
+		    },
+		    legend: {
+		        layout: 'vertical',
+		        align: 'left',
+		        verticalAlign: 'top',
+		        x: 100,
+		        y: 70,
+		        floating: true,
+		        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+		        borderWidth: 1
+		    },
+		    plotOptions: {
+		        scatter: {
+		            marker: {
+		                radius: 5,
+		                states: {
+		                    hover: {
+		                        enabled: true,
+		                        lineColor: 'rgb(100,100,100)'
+		                    }
+		                }
+		            },
+		            states: {
+		                hover: {
+		                    marker: {
+		                        enabled: false
+		                    }
+		                }
+		            },
+		            tooltip: {
+		                headerFormat: '<b>{series.name}</b><br>',
+		                pointFormat: '{point.x} cm, {point.y} kg'
+		            }
+		        }
+		    },
+		    series: top5.map(function(x,i){
+		    	var out = {};
+		    	out.name = x;
+		    	out.color = color[i];
+		    	out.data = plotSpace[x];
+		    	return out;
+		    })
+		});
+	}
+
+});
+
+
+</script>

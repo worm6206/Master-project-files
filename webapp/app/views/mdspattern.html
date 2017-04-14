@@ -1,0 +1,348 @@
+<div id="container"></div>
+<script src="includes/d3.v3.js"></script>
+<script type="text/javascript" src="includes/tree.json"></script>
+<script type="text/javascript" src="includes/noteList.json"></script>
+<script type="text/javascript">
+
+
+/*----------  list of composers  ----------*/
+
+var composers = {}; // objet of composers
+var d1 = []; // list of composers and music count, [0] being the max
+var musicsOfTop,topComp;
+var mdsResult;
+var color = d3_3.scale.category10();
+var plotSpace = {};
+var steps = [];
+var tree2;
+var space = [];
+var musics = {};
+d3.tsv("includes/list.tsv", function(data) {
+	data.forEach(function(d,i){
+		musics[d['No.']] = {};
+		musics[d['No.']]['No.'] = d['No.'];
+		musics[d['No.']]['Author'] = d.Author;
+		musics[d['No.']]['Name'] = d.Music;
+		if(d.Author in composers)
+			composers[d.Author].push(d['No.']);
+		else{
+			composers[d.Author] = [];
+			// composers[d.Author].music = [];
+			composers[d.Author].push(d['No.']);
+		}
+	});
+	console.log(composers);
+	for(var x in composers){
+		var temp = [];
+		temp.push(x);
+		temp.push(composers[x].length);
+		d1.push(temp);
+	}
+	d1 = d1.sort(function(x,y){return y[1] - x[1]});
+	topComp = d1.map(function(x){return x[0]}).slice(0,5);
+	musicsOfTop = [];
+	sizeArr = [];
+	for(var i in topComp){
+		sizeArr.push(composers[topComp[i]].length);
+		musicsOfTop = musicsOfTop.concat(composers[topComp[i]]);
+	}
+	console.log(musicsOfTop)
+
+	/*----------  calculate max/min pitch/duration  ----------*/
+	
+	var minPitch = Infinity,
+		maxPitch = -Infinity,
+		maxDuration = -Infinity;
+	
+	var notes_list = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+
+	function toAbsPitch(inNote){
+		var temp = 12*+inNote.slice(1,2) + notes_list.indexOf(inNote.slice(0,1));
+		if(inNote.slice(2,3)=='+')
+			temp+=1;
+		else if(inNote.slice(2,3)=='-')
+			temp-=1;
+		return temp;
+	}
+
+	for(var i in noteList){
+		for(var j in noteList[i]){
+			var p = toAbsPitch(noteList[i][j]);
+			if(minPitch>p) minPitch = p;
+			if(maxPitch<p) maxPitch = p;
+			if(+maxDuration<+noteList[i][j].slice(3,noteList[i][j].length)) maxDuration = noteList[i][j].slice(3,noteList[i][j].length);
+		}
+	}
+	console.log(minPitch,maxPitch,maxDuration);
+
+
+	/*----------  calculating distance  ----------*/
+
+	function numToTop(num){ // input starts with 0
+		for(var i in sizeArr){
+			num-=sizeArr[i]
+			if(num < 0)
+				return (+i+1);
+		}
+		return sizeArr.length;
+	}
+
+	// tree is array
+	function tra(t,d){
+		var o = {};
+		if(d==0)
+			return {id:t.id};
+		o.id = t.id;
+		if(('children' in t)){
+			o.children = [];
+			for(var x in t.children)
+				o.children.push(tra(t.children[x],d-1));
+		}
+		return o;
+	}
+
+	function leng(t){
+		if(!('children' in t)) return 1;
+		var sum = 0;
+		sum += leng(t.children[0]);
+		sum += leng(t.children[1]);
+		return sum;
+	}
+
+	// Define cost functions. 
+	// console.log(tree[0]);
+	// var insert, remove, update;
+	// var insertremoveCount = 0,
+	// 	updateCount = 0;
+	// insert = remove = function(node) { insertremoveCount++;return 1; };
+	// update = function(nodeA, nodeB) { updateCount++;return nodeA.id !== nodeB.id ? 1 : 0; };
+	// var children = function(node) { return node.children; };
+
+	function subtree(t){
+		var out = "";
+		if(('children' in t)){
+			for(var x in t.children)
+				out +=subtree(t.children[x]);
+		}else{
+			out+=(t.id.slice(3,t.id.length));
+		}
+		return out;
+	}
+
+	function travel(t,l){
+		var out = [];
+		if(subtree(t).length > l){
+			for(var x in t.children)
+				out = out.concat(travel(t.children[x],l));
+		}else if(subtree(t).length <= l){
+			out.push(subtree(t));
+		}
+		return out;
+	}
+
+	tree2 = tree.filter(function(el,i){
+	  return (i in musicsOfTop);
+	});
+
+	var max = -Infinity;
+
+	// fill with 0s
+	for(var i in musicsOfTop){
+		var temp = [];
+		for(var j in musicsOfTop){
+			temp.push(0);
+		}
+		steps.push(temp);
+	}
+
+	tree2.forEach(function(x,i){
+		tree2.forEach(function(y,j){
+			if(i<=j) return;
+			var patternLength = 4
+			// var d = ted(tree2[i], tree2[j], children, insert, remove, update).distance/Math.max(leng(tree2[i],tree2[j]));
+			var sum = travel(tree2[i],patternLength).length+travel(tree2[j],patternLength).length;
+			var inter = _.intersection(travel(tree2[i],patternLength),travel(tree2[j],patternLength));
+			var diff = _.difference(travel(tree2[i],patternLength), inter).length+_.difference(travel(tree2[j],patternLength), inter).length
+			var d = diff/sum;
+			steps[i][j] = d;
+			steps[j][i] = d;
+			if(max < d) max = d;
+		});
+	});
+	// console.log("insert/remove:"+insertremoveCount);
+	// console.log("update:"+updateCount);
+/*----------  MDS  ----------*/
+	mdsResult = mds(steps);
+	function mds(distances, dimensions) {
+        dimensions = dimensions || 2;
+
+        // square distances
+        var M = numeric.mul(-0.5, numeric.pow(distances, 2));
+
+        // double centre the rows/columns
+        function mean(A) { return numeric.div(numeric.add.apply(null, A), A.length); }
+        var rowMeans = mean(M),
+            colMeans = mean(numeric.transpose(M)),
+            totalMean = mean(rowMeans);
+
+        for (var i = 0; i < M.length; ++i) {
+            for (var j =0; j < M[0].length; ++j) {
+                M[i][j] += totalMean - rowMeans[i] - colMeans[j];
+            }
+        }
+
+        // take the SVD of the double centred matrix, and return the
+        // points from it
+        var ret = numeric.svd(M),
+            eigenValues = numeric.sqrt(ret.S);
+        return ret.U.map(function(row) {
+            return numeric.mul(row, eigenValues).splice(0, dimensions);
+        });
+    };
+
+
+	/*----------  scatter plot  ----------*/
+	var counter = 0;
+	for(var i in topComp){
+		plotSpace[topComp[i]] = mdsResult.slice(counter,counter+sizeArr[i]);
+		counter += sizeArr[i];
+	}
+
+	$('#container').height($('#container').width());
+	$(window).resize(function(){$('#container').height($('#container').width());});
+
+	// console.log(topComp,sizeArr);
+	// console.log(numToTop(28),numToTop(29),numToTop(30),numToTop(90));
+
+	var data = [[5,3], [10,17], [15,4], [2,8]];
+   
+    var margin = {topComp: 10, right: 10, bottom: 10, left: 10}
+      , width = 600
+      , height = 600;
+    
+    var x = d3_3.scale.linear()
+              .domain([d3_3.min(mdsResult, function(d) { return d[0]; }), d3_3.max(mdsResult, function(d) { return d[0]; })])
+              .range([ 0, width ]);
+    
+    var y = d3_3.scale.linear()
+    	      .domain([d3_3.min(mdsResult, function(d) { return d[1]; }), d3_3.max(mdsResult, function(d) { return d[1]; })])
+    	      .range([ height, 0 ]);
+ 
+    var chart = d3_3.select('#container')
+	.append('svg')
+	.attr('width', width + margin.right + margin.left)
+	.attr('height', height + margin.topComp + margin.bottom)
+	.attr('class', 'chart')
+
+    var main = chart.append('g')
+	.attr('transform', 'translate(' + margin.left + ',' + margin.topComp + ')')
+	.attr('width', width)
+	.attr('height', height)
+	.attr('class', 'main')   
+        
+ //    // draw the x axis
+ //    var xAxis = d3_3.svg.axis()
+	// .scale(x)
+	// .orient('bottom');
+
+ //    main.append('g')
+	// .attr('transform', 'translate(0,' + height + ')')
+	// .attr('class', 'main axis date')
+	// .call(xAxis);
+
+ //    // draw the y axis
+ //    var yAxis = d3_3.svg.axis()
+	// .scale(y)
+	// .orient('left');
+
+ //    main.append('g')
+	// .attr('transform', 'translate(0,0)')
+	// .attr('class', 'main axis date')
+	// .call(yAxis);
+
+    var range = [];
+    var temp = 0;
+    for(var i in sizeArr){
+    	var temp2 = [];
+    	temp2.push(temp);
+    	temp += sizeArr[i];
+    	temp2.push(temp);
+    	// temp += 1;
+    	range.push(temp2);
+    }
+
+    var g = main.append("g"); 
+
+	var tooltip = d3_3.select("body")
+		.append("div")
+		.attr('class','d3-tip')
+		.style("position", "absolute")
+		.style("z-index", "10")
+		.style("visibility", "hidden")
+		.text("a simple tooltip");
+
+    for(var i in topComp){
+	    var hull = g.append("path");
+
+	    hull.datum(d3_3.geom.hull(mdsResult.slice(range[i][0],range[i][1]).map(function(d){return [x(d[0]),y(d[1])];})))
+			// .attr('transform', 'translate(' + margin.left + ',' + margin.topComp + ')')
+	    	.attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+	    	.style("fill", function() { return color(+i+1);})
+	    	.style("opacity", .1)
+	        .style("stroke", function() { return color(+i+1);})
+	        .style("stroke-width", 10)
+	        .style("stroke-linejoin", "round");
+    }
+
+
+    
+    g.selectAll("scatter-dots")
+      .data(mdsResult)
+      .enter().append("circle")
+          .attr("cx", function (d,i) { return x(d[0]); } )
+          .attr("cy", function (d) { return y(d[1]); } )
+          .attr("id", function(d,i) { return color(numToTop(i));})
+          .style("fill", function(d,i) { return color(numToTop(i));}) 
+          .attr("r", 3)
+			.on("mouseover", function(d,i){
+				tooltip.html('<p>No: '+musics[musicsOfTop[i]]['No.']+'<p>Composer: '+musics[musicsOfTop[i]].Author+'</p><p>Music: '+musics[musicsOfTop[i]].Name+'</p>');
+				return tooltip.style("visibility", "visible");
+			})
+			.on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+			.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+
+});
+
+
+</script>
+<style type="text/css">
+.d3-tip {
+  line-height: 1;
+  /*font-weight: bold;*/
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+}
+</style>
